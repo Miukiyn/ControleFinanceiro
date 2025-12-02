@@ -15,13 +15,10 @@ import {
 } from 'lucide-react';
 
 // ============================================================================
-// 1. CONFIGURAÇÃO E UTILITÁRIOS
+// 1. CONFIGURAÇÕES INICIAIS (Firebase, Constantes, Utils)
 // ============================================================================
 
-// --- Configuração do Firebase ---
-// LÓGICA HÍBRIDA:
-// 1. Se estiver no Canvas (ambiente de teste), usa __firebase_config automático.
-// 2. Se estiver no seu PC, usa o objeto com suas chaves manuais.
+// Configuração do Firebase (usa variável injetada no Canvas ou padrão) 
 const firebaseConfig = typeof __firebase_config !== 'undefined' 
   ? JSON.parse(__firebase_config) 
   : {
